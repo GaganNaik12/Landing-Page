@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>eBook Download</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+      color: #333;
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    header {
+      margin-bottom: 40px;
+      position: relative;
+    }
+
+    header h1 {
+      font-size: 3.2em;
+      color: #1e3c72;
+      margin-bottom: 15px;
+      position: relative;
+      z-index: 1;
+    }
+
+    header h1::before {
+      content: "";
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      background: radial-gradient(circle, rgba(42,82,152,0.2) 0%, transparent 70%);
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: -1;
+      border-radius: 50%;
+    }
+
+    header p {
+      font-size: 1.2em;
+      color: #555;
+    }
+
+    .ebook-image {
+      max-width: 280px;
+      display: block;
+      margin: 30px auto;
+      transition: transform 0.3s ease;
+      border-radius: 10px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+
+    .ebook-image:hover {
+      transform: scale(1.05);
+    }
+
+    .download-btn {
+      background: #1e3c72;
+      color: white;
+      padding: 15px 35px;
+      font-size: 1.1em;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 20px;
+    }
+
+    .download-btn:hover {
+      background: #2a5298;
+      transform: translateY(-3px);
+    }
+
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 60px;
+      gap: 30px;
+    }
+
+    .feature {
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      max-width: 250px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .feature:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    }
+
+    .feature h3 {
+      color: #1e3c72;
+      margin-bottom: 15px;
+    }
+
+    .about, .inside, .author, .faq {
+      margin-top: 70px;
+      text-align: center;
+    }
+
+    .about h2, .inside h2, .author h2, .faq h2 {
+      font-size: 2em;
+      color: #1e3c72;
+      margin-bottom: 20px;
+    }
+
+    .about p, .author p {
+      font-size: 1.1em;
+      color: #444;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .inside ul {
+      list-style: none;
+      padding: 0;
+      max-width: 600px;
+      margin: 20px auto;
+      text-align: left;
+    }
+
+    .inside ul li {
+      margin: 12px 0;
+      font-size: 1.05em;
+      color: #333;
+      padding-left: 30px;
+      position: relative;
+    }
+
+    .inside ul li::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      color: #2a5298;
+      font-weight: bold;
+    }
+
+    .testimonial {
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      margin: 60px auto;
+      max-width: 600px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      font-style: italic;
+    }
+
+    .testimonial span {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+      color: #1e3c72;
+    }
+
+    .author img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      margin: 20px 0;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    .faq .faq-item {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 15px auto;
+      max-width: 700px;
+      text-align: left;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    .faq .faq-item h4 {
+      color: #1e3c72;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      margin-top: 80px;
+      font-size: 0.9em;
+      color: #555;
+    }
+
+    @media (max-width: 768px) {
+      .features {
+        flex-direction: column;
+        gap: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Unlock Your Knowledge</h1>
+      <p>Download our free eBook “Mastering Productivity” and boost your skills instantly.</p>
+    </header>
+
+    <img src="3d-rendered-photos-book-coffee_1148167-72.jpg" alt="eBook Cover" class="ebook-image">
+    
+    <a href="#" class="download-btn" onclick="alert('Your download will start shortly!')">Download Now</a>
+
+    <div class="features">
+      <div class="feature">
+        <h3>Practical Tips</h3>
+        <p>Learn actionable strategies to improve productivity and manage your time efficiently.</p>
+      </div>
+      <div class="feature">
+        <h3>Expert Advice</h3>
+        <p>Insights from industry experts to help you achieve your goals faster.</p>
+      </div>
+      <div class="feature">
+        <h3>Easy to Read</h3>
+        <p>Clear, concise, and engaging content that you can apply immediately.</p>
+      </div>
+    </div>
+
+    <div class="inside">
+      <h2>What’s Inside?</h2>
+      <ul>
+        <li>Top 10 time management techniques.</li>
+        <li>How to eliminate distractions and stay focused.</li>
+        <li>Step-by-step morning routine for high productivity.</li>
+        <li>Tips to balance work, study, and personal life.</li>
+        <li>Bonus: Recommended productivity apps & tools.</li>
+      </ul>
+    </div>
+
+    <div class="about">
+      <h2>About the eBook</h2>
+      <p>This eBook is designed for professionals, students, and entrepreneurs who want to achieve more with less effort. 
+      Packed with proven techniques, it will help you stay focused, overcome procrastination, and create a system that works for you.</p>
+    </div>
+
+    <div class="testimonial">
+      <p>“This eBook completely changed how I approach my daily work. I was able to save 10+ hours a week just by applying the methods inside.”</p>
+      <span>- Sarah, Marketing Manager</span>
+    </div>
+
+    <div class="author">
+      <h2>About the Author</h2>
+      <img src="author.jpg" alt="Author Photo">
+      <p>John Doe is a productivity coach and speaker with over 10 years of experience helping professionals maximize their potential. His strategies have been featured in top business magazines worldwide.</p>
+    </div>
+
+    <div class="faq">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <h4>Is the eBook really free?</h4>
+        <p>Yes! You can download the eBook without any hidden charges.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Do I need to sign up?</h4>
+        <p>No signup required, just click the button and start reading!</p>
+      </div>
+      <div class="faq-item">
+        <h4>Can I share it with my friends?</h4>
+        <p>Absolutely, feel free to share it with anyone who might benefit.</p>
+      </div>
+    </div>
+
+    <a href="#" class="download-btn" onclick="alert('Your download will start shortly!')">Get Your Free Copy</a>
+
+    <footer>
+      &copy; 2025 ebook. All rights reserved.
+    </footer>
+  </div>
+</body>
+</html>
