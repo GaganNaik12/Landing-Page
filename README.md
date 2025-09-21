@@ -1,1 +1,3 @@
 # Landing-Page
+
+Developed a fully responsive landing page as part of the Oasis Infobyte virtual internship program. The page was designed with a modern and professional layout, ensuring smooth navigation and an engaging user experience. Implemented HTML, CSS, and JavaScript to structure the content, style the interface, and add interactivity. Focused on creating a visually appealing design with proper alignment, typography, and color schemes to enhance readability. The project highlights my ability to design and develop web pages that are both functional and user-friendly, while also showcasing front-end development skills.
